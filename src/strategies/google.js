@@ -15,12 +15,12 @@ passport.use(
       scope: [
         "email",
         "profile",
-        // "https://www.googleapis.com/auth/youtube",
-        // "https://www.googleapis.com/auth/youtube.force-ssl",
+        "https://www.googleapis.com/auth/youtube",
+        "https://www.googleapis.com/auth/youtube.force-ssl",
       ],
     },
     async (accessToken, refreshToken, profile, done) => {
-      console.log(accessToken);
+      console.log("acessToken:", accessToken);
       console.log(refreshToken);
       console.log(profile);
       done(null, { username: profile.displayName });
